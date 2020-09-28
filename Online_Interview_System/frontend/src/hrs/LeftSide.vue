@@ -16,15 +16,42 @@
         <el-button type="text" class="but">发送邮件</el-button>
       </el-col>
     </el-row>
-    <el-col :span="18" offset="9">
-      <el-row v-for="item in nameList" v-bind:key="item">
+    <el-row>
+      <el-col :span="18" offset="9">
         <el-card class="box-card" shadow="hover">
           <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
-          <div class="item">Name:{{ item.name }}</div>
-          <div class="item">Email:{{ item.email }}</div>
+          <div class="item">Name:{{ name1 }}</div>
+          <div class="item">Email:{{email1}}</div>
         </el-card>
-      </el-row>
-    </el-col>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="9">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name2 }}</div>
+          <div class="item">Email:{{email2}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="9">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name3 }}</div>
+          <div class="item">Email:{{email3}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="9">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name4 }}</div>
+          <div class="item">Email:{{email4}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -33,27 +60,17 @@ export default {
   name: 'LeftSide',
   data () {
     return {
+      name1: '候选人1',
+      email1: 'fir@mail.ustc.edu.cn',
+      name2: '候选人2',
+      email2: 'sec@mail.ustc.edu.cn',
+      name3: '候选人3',
+      email3: 'thi@mail.ustc.edu.cn',
+      name4: '候选人4',
+      email4: 'for@mail.ustc.edu.cn',
       circleUrl: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
       checked1: false,
-      checked2: false,
-      n: 4,
-      nameList: [{
-        name: '候选人1',
-        email: 'fir@mail.ustc.edu.cn',
-        state: 0//  未安排
-      }, {
-        name: '候选人2',
-        email: 'sec@mail.ustc.edu.cn',
-        state: 0//  未安排
-      }, {
-        name: '候选人3',
-        email: 'thi@mail.ustc.edu.cn',
-        state: 0//  未安排
-      }, {
-        name: '候选人4',
-        email: 'for@mail.ustc.edu.cn',
-        state: 0//  未安排
-      }]
+      checked2: false
     }
   }
 }
@@ -76,7 +93,6 @@ export default {
     padding-top: 0;
   }
   .item {
-    padding-left: 100px;
     margin-bottom: 13px;
   }
   .title {

@@ -25,7 +25,7 @@ SECRET_KEY = 'nzz+r7-cz37jy(6tu(x2kd#&%%_pav2-gjbcvihl*6&&^tgs5w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -104,10 +104,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Online_Interview_System',
-        'USER': 'root', 
-        'PASSWORD': 'Cbn111156789!', 
-        'HOST': '127.0.0.1', 
+        'USER': 'interview',
+        'PASSWORD': 'interview',
+        'HOST': '127.0.0.1',
         'PORT': '3306', 
+        'CHARSET': 'utf8mb4', 
+        'COLLATION': 'utf8mb4_unicode_ci', 
     }
 }
 
@@ -149,7 +151,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = './static/'
 # Add for vuejs
-STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, "frontend/dist/static"), 
-]
+# STATICFILES_DIRS = [
+# os.path.join(BASE_DIR, STATIC_ROOT), 
+# ]

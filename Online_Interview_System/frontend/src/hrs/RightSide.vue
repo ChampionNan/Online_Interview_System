@@ -13,32 +13,42 @@
         <el-checkbox v-model="checked2">无空闲时间</el-checkbox>
       </el-col>
     </el-row>
-    <el-col :span="18" offset="9">
-      <el-row v-for="(item, index) in nameList" v-bind:key="item">
-        <el-card class="box-card" shadow="hover" @click="opendialogFormVisible(index)">
+    <el-row>
+      <el-col :span="18" offset="6">
+        <el-card class="box-card" shadow="hover">
           <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
-          <div class="item">Name:{{ item.name }}</div>
-          <div class="item">Email:{{ item.email }}</div>
+          <div class="item">Name:{{ name1 }}</div>
+          <div class="item">Email:{{email1}}</div>
         </el-card>
-      </el-row>
-    </el-col>
-    <el-dialog title="面试官信息" :visible.sync="dialogFormVisible">
-      <el-form :model="form">
-        <el-form-item label="活动名称" :label-width="formLabelWidth">
-          <el-input v-model="form.name" autocomplete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="活动区域" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="请选择活动区域">
-            <el-option label="区域一" value="shanghai"></el-option>
-            <el-option label="区域二" value="beijing"></el-option>
-          </el-select>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
-      </div>
-    </el-dialog>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="6">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name2 }}</div>
+          <div class="item">Email:{{email2}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="6">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name3 }}</div>
+          <div class="item">Email:{{email3}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="18" offset="6">
+        <el-card class="box-card" shadow="hover">
+          <div class="icon"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
+          <div class="item">Name:{{ name4 }}</div>
+          <div class="item">Email:{{email4}}</div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -47,33 +57,17 @@ export default {
   name: 'RightSide',
   data () {
     return {
+      name1: '面试官1',
+      email1: 'fir@ustc.edu.cn',
+      name2: '面试官2',
+      email2: 'sec@ustc.edu.cn',
+      name3: '面试官3',
+      email3: 'thi@ustc.edu.cn',
+      name4: '面试官4',
+      email4: 'for@ustc.edu.cn',
       circleUrl: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
       checked1: false,
-      checked2: false,
-      nameList: [{
-        name: '面试官1',
-        email: 'fir@ustc.edu.cn',
-        state: 1//  有空闲时间
-      }, {
-        name: '面试官2',
-        email: 'sec@ustc.edu.cn',
-        state: 1
-      }, {
-        name: '面试官3',
-        email: 'thi@ustc.edu.cn',
-        state: 1
-      }, {
-        name: '面试官4',
-        email: 'for@ustc.edu.cn',
-        state: 1
-      }],
-      sequence: 0
-    }
-  },
-  methods: {
-    opendialogFormVisible: function (index) {
-      this.dialogTableVisible = true
-      this.sequence = index // 表示是第几个card
+      checked2: false
     }
   }
 }
@@ -96,7 +90,6 @@ export default {
     padding-top: 0;
   }
   .item {
-    padding-left: 20px;
     margin-bottom: 13px;
   }
   .title {
@@ -110,7 +103,7 @@ export default {
     font-size: 16px;
     width: 400px;
     height: 100px;
-    margin-left: -100px;
+    margin-left: 0px;
     border-radius: 20px;
     border-width: 2px;
   }
